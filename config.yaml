@@ -1,0 +1,25 @@
+---
+
+rangeBED: 100000
+FILE_SAMPLES: inputFiles/EUR_candidate_lgd.toy.ids
+PATH2RelateOut: RelateOutput
+beagle: scripts/beagle.25Nov19.28d.jar
+SUB_CHR_NAME: inputFiles/sub_chr_name.txt
+PATH2refVCF: inputFiles/refVCF_1KG/
+PATH2geneMap: inputFiles/GeneMap_plink/
+
+PATH_RELATE: /net/eichler/vol26/home/hsiehph/bin/relate_v1.0.16_x86_64_static/bin/
+Ne: 10000
+mu: 1.3e-8
+PATH2MASK: inputFiles/maskFiles 
+PATH2ANCESTRAL: inputFiles/AncestralSeq
+
+PATH2GENEMAP: inputFiles/GeneMap_relate
+
+
+unphasedVCF:
+    chr22:
+        test: inputFiles/unphasedVCF/test.chr22.vcf.gz 
+
+regionFiles:
+    chr22: inputFiles/regionFiles/EUR_candidate_lgd_chr22_positions.txt

@@ -1,0 +1,12 @@
+
+zcat ../../ucsc_repeats_segdups_plus_recent_repeats_sort_merge.bed.gz ../../hg38_centromeres_09252018.bed.gz | cut -f1-3 | grep -v -e "[X|Y]" | sort -k1,1 -k2,2n | bedtools merge -i - > maskIntervals.hg38.merged.bed
+
+
+for f in `ls ../../../../../hsiehph/genomicData/humanHg38_chimpClint/dir_clint_fasta/*.fa`;do x=`basename $f .fa`;bedtools maskfasta -fi $f -bed maskIntervals.hg38.merged.bed -fo $x.mask.fa.tmp -mc N ;done
+ 
+for f in `ls *.tmp`;do x=`basename $f .tmp`;bedtools maskfasta -fi $f -bed passIntervals.hg38.merged.bed -fo $x -mc P ;done
+
+
+
+
+
